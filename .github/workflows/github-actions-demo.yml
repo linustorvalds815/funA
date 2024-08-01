@@ -18,18 +18,26 @@ jobs:
         ref: main
         token: ${{ secrets.GITHUB_TOKEN }}
 
+    # - name: Create branch and push
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #   run: |
+    #     git clone https://linustorvalds815:$GITHUB_TOKEN@github.com/linustorvalds815/funB.git
+    #     cd funB
+    #     ls -al
+    #     # git remote add origin https://linustorvalds815:$GITHUB_TOKEN@github.com/linustorvalds815/funB.git
+    #     # git remote set-url origin https://linustorvalds815:$GITHUB_TOKEN@github.com/linustorvalds815/funB.git
+    #     git config --global user.name 'linustorvalds815'
+    #     git config --global user.email '167972596+linustorvalds815@users.noreply.github.com'
+    #     git config -l | grep 'http\..*\.extraheader' | cut -d= -f1 | xargs -L1 git config --unset-all
+    #     git checkout -b security/test
+    #     git remote -v
+    #     # git push -u origin security/test -v
+
     - name: Create branch and push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        git clone https://linustorvalds815:$GITHUB_TOKEN@github.com/linustorvalds815/funB.git
-        cd funB
-        ls -al
-        # git remote add origin https://linustorvalds815:$GITHUB_TOKEN@github.com/linustorvalds815/funB.git
-        # git remote set-url origin https://linustorvalds815:$GITHUB_TOKEN@github.com/linustorvalds815/funB.git
-        git config --global user.name 'linustorvalds815'
-        git config --global user.email '167972596+linustorvalds815@users.noreply.github.com'
-        git config -l | grep 'http\..*\.extraheader' | cut -d= -f1 | xargs -L1 git config --unset-all
-        git checkout -b security/test
-        git remote -v
-        # git push -u origin security/test -v
+      uses: GuillaumeFalourd/create-other-repo-branch-action@v1.5
+      with:
+          repository_owner: linustorvalds815
+          repository_name: funB
+          new_branch_name: security/test
+          access_token: ${{ secrets.GITHUB_TOKEN }}
