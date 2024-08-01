@@ -25,8 +25,8 @@ jobs:
         git clone https://linustorvalds815:$GITHUB_TOKEN@github.com/linustorvalds815/funB.git
         cd funB
         ls -al
-        # git remote add origin https://linustorvalds815:$GITHUB_TOKEN@github.com/linustorvalds815/funB.git
-        # git remote set-url origin https://linustorvalds815:$GITHUB_TOKEN@github.com/linustorvalds815/funB.git
+        git remote add origin https://linustorvalds815:$GITHUB_TOKEN@github.com/linustorvalds815/funB.git
+        git remote set-url origin https://linustorvalds815:$GITHUB_TOKEN@github.com/linustorvalds815/funB.git
         git config --global user.name 'linustorvalds815'
         git config --global user.email '167972596+linustorvalds815@users.noreply.github.com'
         git checkout -b security/test
