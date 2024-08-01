@@ -23,7 +23,6 @@ jobs:
         cd ${{ github.workspace }}
         ls -al
         git config --global user.name 'github-actions'
-        ${{ secrets.GITHUB_TOKEN }}
         git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
         git checkout -b security/test
         git push -u origin security/test
