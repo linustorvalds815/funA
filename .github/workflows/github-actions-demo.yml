@@ -20,7 +20,7 @@ jobs:
 
     - name: Create and push branch
       run: |
-        cd ${{ github.workspace }}/funA
+        cd ${{ github.workspace }}
         ls -al
         git checkout -b security/test
         git push -u origin security/test
