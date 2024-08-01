@@ -6,6 +6,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      RUNNER_DEBUG: 1
 
     steps:
     # - name: Checkout self
