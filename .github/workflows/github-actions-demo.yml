@@ -8,19 +8,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout self
-      uses: actions/checkout@v2
+    # - name: Checkout self
+    #   uses: actions/checkout@v2
 
     - name: Checkout funA
       uses: actions/checkout@v2
       with:
-        repository: linustorvalds815/funA
+        repository: linustorvalds815/funB
         ref: main
-        token: ${{ secrets.GITHUB_TOKEN }}
+        #token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Create and push branch
       run: |
         cd ${{ github.workspace }}
         ls -al
+        git config --global user.name 'github-actions'
+        git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
         git checkout -b security/test
         git push -u origin security/test
