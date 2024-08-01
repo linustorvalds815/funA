@@ -8,15 +8,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout self
-      uses: actions/checkout@v2
-
-    # - name: Checkout funA
+    # - name: Checkout self
     #   uses: actions/checkout@v2
-    #   with:
-    #     repository: linustorvalds815/funA
-    #     ref: main
-    #     token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Checkout funA
+      uses: actions/checkout@v2
+      with:
+        repository: linustorvalds815/funA
+        ref: main
+        #token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Create and push branch
       run: |
