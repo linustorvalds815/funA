@@ -18,11 +18,20 @@ jobs:
         ref: main
         #token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Create and push branch
-      run: |
-        cd ${{ github.workspace }}
-        ls -al
-        git config --global user.name 'github-actions'
-        git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-        git checkout -b security/test
-        git push -u origin security/test
+    - name: Create new branch in another repository
+      uses: GuillaumeFalourd/create-other-repo-branch-action@v1.5
+      with:
+        repository_owner: linustorvalds815
+        repository_name: your-repo-name
+        new_branch_name: funB
+        access_token: ${{ secrets.GITHUB_TOKEN }}
+
+    # - name: Create and push branch
+    #   run: |
+    #     cd ${{ github.workspace }}
+    #     ls -al
+    #     git config --global user.name 'github-actions'
+    #     ${{ secrets.GITHUB_TOKEN }}
+    #     git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+    #     git checkout -b security/test
+    #     git push -u origin security/test
