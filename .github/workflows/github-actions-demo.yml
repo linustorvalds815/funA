@@ -6,8 +6,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      RUNNER_DEBUG: 1
 
     steps:
     # - name: Checkout self
@@ -34,4 +32,4 @@ jobs:
         git config --unset-all http.https://github.com/.extraheader
         git checkout -b security/test
         git remote -v
-        git push -u origin security/test
+        git push -u origin security/test -v
