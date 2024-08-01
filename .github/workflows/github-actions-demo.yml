@@ -27,8 +27,8 @@ jobs:
         ls -al
         # git remote add origin https://linustorvalds815:$GITHUB_TOKEN@github.com/linustorvalds815/funB.git
         # git remote set-url origin https://linustorvalds815:$GITHUB_TOKEN@github.com/linustorvalds815/funB.git
-        # git config --global user.name 'linustorvalds815'
-        # git config --global user.email '167972596+linustorvalds815@users.noreply.github.com'
+        git config --global user.name 'linustorvalds815'
+        git config --global user.email '167972596+linustorvalds815@users.noreply.github.com'
         git checkout -b security/test
-        # git config --unset-all http.https://github.com/.extraheader
+        git config --unset-all http.https://github.com/.extraheader
         git push -u origin security/test
